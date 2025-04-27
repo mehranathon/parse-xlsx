@@ -38,6 +38,15 @@ dependencies {
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 }
 
+spotless {
+	java {
+		googleJavaFormat("1.18.1") // or any other version
+		removeUnusedImports()
+		trimTrailingWhitespace()
+		endWithNewline()
+	}
+}
+
 tasks.named('test') {
 	useJUnitPlatform()
 }
